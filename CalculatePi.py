@@ -33,4 +33,14 @@ def leibniz_formula(iterations):
 the approximation of pi is {total*4}")
 
 
-leibniz_formula(10000)
+def archimedes(n_value):
+    import math
+
+    print(n_value*math.sin(180/n_value))
+
+
+def chudnovsky_algorithm(iterations):
+    pass
+
+
+archimedes(12)
