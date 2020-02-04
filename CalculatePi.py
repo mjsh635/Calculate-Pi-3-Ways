@@ -39,8 +39,27 @@ def archimedes(n_value):
     print(n_value*math.sin(180/n_value))
 
 
+# based on : https://en.wikipedia.org/wiki/Chudnovsky_algorithm but to more digits
+
 def chudnovsky_algorithm(iterations):
-    pass
+    import decimal
+    maxK = 70  
+    Czero = 426880 * decimal.Decimal(10005).sqrt()
+    Mzero = 1
+    Xzero = 1
+    Lzero = 13591409
+    Kzero = 6
+    series_total = 13591409 
 
+    for k in range(1, maxK + 1):
+        Lzero += 545140134
+        Xzero *= (-262537412640768000)
+        Mzero = (Kzero**3 - 16*Kzero) * Mzero / k**3
+        series_total += decimal.Decimal(Mzero*Lzero) / Xzero
+        Kzero += 12
 
-archimedes(12)
+    pi = Czero / series_total
+    return pi
+
+print(chudnovsky_algorithm(1))
+
