@@ -34,12 +34,12 @@ the approximation of pi is {total*4}")
 
 
 def archimedes(n_value):
-    """Calculate pi in radians using archimedes
+    """Calculate pi radians using archimedes
     method
     """
     import math
 
-    print(n_value*math.sin(180/n_value))
+    print("Pi Radians = ", n_value*math.sin(180/n_value))
 
 
 def chudnovsky_algorithm(iterations):
@@ -79,15 +79,15 @@ def DemoAllMethods():
     """
     import time
 
-    print("here is the leibniz formula used for 10 million iterations\n")
+    print("Here is the Leibniz formula used for 10 million iterations\n")
     time.sleep(1)
     leibniz_formula(10000000)
     time.sleep(3)
-    print("\nhere is the archimedes method used with an n_value of 10000")
+    print("\nhere is the Archimedes method used with an n_value of 10000")
     time.sleep(1)
     archimedes(10000)
     time.sleep(3)
-    print("\nHere is the chudnovsky algorithm that will approximate pi to 40 digits after only 70 iterationsn")
+    print("\nHere is the Chudnovsky algorithm that will approximate pi to 40 digits after only 70 iterations")
     time.sleep(1)
     chudnovsky_algorithm(70)
     time.sleep(3)
